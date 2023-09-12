@@ -41,7 +41,7 @@ const sendLogToLoki = async (logMessage, method) => {
                 {
                     stream: {
                         level: 'info',
-                        app: 'bees',
+                        app: 'vue',
                     },
                     values: [
                         [

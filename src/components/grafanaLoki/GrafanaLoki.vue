@@ -15,7 +15,6 @@ export default {
   setup() {
     const logMessage = ref(null);
 
-    // Use uma função async separada para realizar a solicitação à API
     async function fetchData() {
       try {
         const response = await lokiAxios.get(
@@ -27,19 +26,12 @@ export default {
       }
     }
 
-    // Chame a função fetchData no início do setup
-    // async function handleClick() {
-    //   console.log("Before API request");
-
-    //   // Espere pela resposta antes de prosseguir
-    //   await fetchData();
-
-    //   console.log("After API request");
-    // }
     async function handleClick() {
-      logMessage.value = "Loading..."; // Defina uma mensagem enquanto a solicitação está em andamento
-      const title = await fetchData();
-      logMessage.value = title;
+      console.log("Before API request");
+
+      await fetchData();
+
+      console.log("After API request");
     }
 
     return {
